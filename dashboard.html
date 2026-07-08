@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F4C81'><path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/></svg>">
+    <title>User Dashboard | PrimeNest Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white transition-colors duration-300 flex h-screen overflow-hidden">
+
+    <!-- Sidebar Overlay (Mobile & Tablet) -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden transition-opacity opacity-0 pointer-events-none"></div>
+
+    <!-- Aside Navbar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-gray-800 flex flex-col transition-transform transform -translate-x-full lg:translate-x-0 duration-300">
+        <!-- Logo -->
+        <div class="h-16 lg:h-20 flex items-center px-6 border-b border-gray-200 dark:border-gray-800 shrink-0 justify-between">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-house-line text-primary text-3xl"></i>
+                <a href="index.html" class="font-heading font-bold text-xl tracking-tight text-primary dark:text-white">
+                    PrimeNest<span class="text-secondary">.</span>
+                </a>
+            </div>
+            <button id="close-sidebar" class="lg:hidden text-gray-500 hover:text-primary focus:outline-none">
+                <i class="ph ph-x text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Links -->
+        <div class="flex-1 overflow-y-auto py-6 px-4 space-y-2" id="nav-links">
+            <a href="#" data-tab="dashboard" class="nav-link flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary dark:text-blue-400 rounded-lg font-medium transition-colors">
+                <i class="ph-fill ph-squares-four text-xl"></i> Dashboard
+            </a>
+            <a href="#" data-tab="applications" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg font-medium transition-colors">
+                <i class="ph ph-file-text text-xl"></i> Applications
+            </a>
+            <a href="#" data-tab="documents" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg font-medium transition-colors">
+                <i class="ph ph-folder text-xl"></i> Documents
+            </a>
+            <a href="#" data-tab="emihistory" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg font-medium transition-colors">
+                <i class="ph ph-calculator text-xl"></i> EMI History
+            </a>
+            <div class="pt-4 mt-4 border-t border-gray-100 dark:border-gray-800">
+                <a href="#" data-tab="profile" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg font-medium transition-colors">
+                    <i class="ph ph-user text-xl"></i> Profile
+                </a>
+                <a href="#" data-tab="settings" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg font-medium transition-colors">
+                    <i class="ph ph-gear text-xl"></i> Settings
+                </a>
+            </div>
+        </div>
+
+        <!-- Toggles & User -->
+        <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-4 shrink-0">
+            <div class="flex items-center justify-between px-2">
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Preferences</span>
+                <div class="flex gap-2">
+                    <button id="dir-toggle-sidebar" class="p-1.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 text-xs font-semibold hover:text-primary transition-colors">LTR</button>
+                    <button id="theme-toggle-sidebar" class="p-1.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                        <i class="ph ph-moon dark:hidden"></i>
+                        <i class="ph ph-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 px-2 py-2">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">JD</div>
+                <div class="overflow-hidden">
+                    <p class="text-sm font-bold dark:text-white leading-none truncate">John Doe</p>
+                    <a href="login.html" class="text-xs text-gray-500 hover:text-primary truncate">Logout</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden relative">
+        
+        <!-- Mobile Header (Visible only on lg and down) -->
+        <header class="lg:hidden h-16 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-4 shrink-0 z-30 relative shadow-sm">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-house-line text-primary text-2xl"></i>
+                <span class="font-heading font-bold text-lg text-primary dark:text-white">PrimeNest.</span>
+            </div>
+            <button id="open-sidebar" class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-10 relative">
+            
+            <!-- Dashboard Tab -->
+            <div id="tab-dashboard" class="tab-content block fade-in">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-2">Welcome Back, John!</h1>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">Here is an overview of your active applications.</p>
+                    </div>
+                    <a href="booknow.html" class="mt-4 md:mt-0 bg-primary hover:bg-secondary text-white px-5 py-2.5 rounded-lg font-medium shadow-lg transition-colors flex items-center gap-2 text-sm md:text-base">
+                        <i class="ph-bold ph-plus"></i> New Application
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-primary dark:text-blue-400 rounded-full flex items-center justify-center">
+                                <i class="ph-fill ph-file-text text-2xl"></i>
+                            </div>
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">Active</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">Application Status</p>
+                        <h3 class="text-xl font-bold dark:text-white">Under Review</h3>
+                        <p class="text-xs text-gray-400 mt-2">Ref: #LN-29384</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full flex items-center justify-center">
+                                <i class="ph-fill ph-check-square-offset text-2xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">Pre-Approved Amount</p>
+                        <h3 class="text-xl font-bold dark:text-white">$450,000</h3>
+                        <p class="text-xs text-gray-400 mt-2">Valid until Dec 31, 2024</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-orange-50 dark:bg-orange-900/30 text-orange-500 dark:text-orange-400 rounded-full flex items-center justify-center">
+                                <i class="ph-fill ph-calendar text-2xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">Next Appointment</p>
+                        <h3 class="text-xl font-bold dark:text-white">Oct 15, 10:00 AM</h3>
+                        <p class="text-xs text-gray-400 mt-2">Property Valuation</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <div class="xl:col-span-2 space-y-8">
+                        <div class="bg-white dark:bg-carddark p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <h3 class="text-lg font-bold dark:text-white mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">Loan Timeline (Home Purchase)</h3>
+                            
+                            <div class="relative border-l-2 border-primary ml-3 space-y-8">
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[11px] top-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center border-4 border-white dark:border-carddark"></div>
+                                    <p class="text-xs font-bold text-primary mb-1">Oct 01, 2024</p>
+                                    <h4 class="font-bold dark:text-white mb-1">Application Submitted</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Your initial application forms have been received.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[11px] top-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center border-4 border-white dark:border-carddark"></div>
+                                    <p class="text-xs font-bold text-primary mb-1">Oct 03, 2024</p>
+                                    <h4 class="font-bold dark:text-white mb-1">Documents Verified</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">All uploaded KYC and financial documents are verified.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[11px] top-1 w-5 h-5 bg-orange-400 rounded-full flex items-center justify-center border-4 border-white dark:border-carddark">
+                                        <span class="w-2 h-2 bg-white rounded-full animate-ping"></span>
+                                    </div>
+                                    <p class="text-xs font-bold text-orange-500 mb-1">In Progress</p>
+                                    <h4 class="font-bold dark:text-white mb-1">Bank Processing</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Application has been forwarded to MetroFinance for review.</p>
+                                </div>
+                                <div class="relative pl-8 opacity-50">
+                                    <div class="absolute -left-[11px] top-1 w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center border-4 border-white dark:border-carddark"></div>
+                                    <h4 class="font-bold dark:text-white mb-1">Final Approval</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Pending bank decision.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="bg-blue-50 dark:bg-slate-800 p-6 rounded-2xl border border-blue-100 dark:border-gray-700">
+                            <div class="flex items-center gap-3 text-primary dark:text-blue-400 mb-4">
+                                <i class="ph-fill ph-warning-circle text-2xl"></i>
+                                <h3 class="font-bold">Action Required</h3>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Please upload your latest 3 months salary slips to proceed with the bank processing.</p>
+                            <button onclick="document.querySelector('[data-tab=\'documents\']').click()" class="w-full bg-white dark:bg-carddark border border-gray-200 dark:border-gray-600 hover:border-primary text-slate-700 dark:text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                                <i class="ph-bold ph-upload-simple"></i> Upload Documents
+                            </button>
+                        </div>
+
+                        <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <h3 class="text-lg font-bold dark:text-white mb-4">Recent Notifications</h3>
+                            <div class="space-y-4 divide-y divide-gray-100 dark:divide-gray-800">
+                                <div class="pt-2 flex gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0"><i class="ph-fill ph-check"></i></div>
+                                    <div>
+                                        <p class="text-sm dark:text-white font-medium">KYC Approved</p>
+                                        <p class="text-xs text-gray-500">2 days ago</p>
+                                    </div>
+                                </div>
+                                <div class="pt-4 flex gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-blue-100 text-primary flex items-center justify-center shrink-0"><i class="ph-fill ph-info"></i></div>
+                                    <div>
+                                        <p class="text-sm dark:text-white font-medium">New interest rates available</p>
+                                        <p class="text-xs text-gray-500">4 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Tab -->
+            <div id="tab-applications" class="tab-content hidden fade-in">
+                <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-8">My Applications</h1>
+                
+                <div class="bg-white dark:bg-carddark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 dark:bg-slate-800 border-b border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-sm">
+                                    <th class="px-6 py-4 font-semibold">Reference ID</th>
+                                    <th class="px-6 py-4 font-semibold">Loan Type</th>
+                                    <th class="px-6 py-4 font-semibold">Amount</th>
+                                    <th class="px-6 py-4 font-semibold">Date Applied</th>
+                                    <th class="px-6 py-4 font-semibold">Status</th>
+                                    <th class="px-6 py-4 font-semibold text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-700 text-sm">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-blue-400">#LN-29384</td>
+                                    <td class="px-6 py-4 dark:text-white font-medium">Home Purchase Loan</td>
+                                    <td class="px-6 py-4 dark:text-gray-300">$500,000</td>
+                                    <td class="px-6 py-4 text-gray-500">Oct 01, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold text-xs inline-block">Under Review</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button onclick="document.querySelector('[data-tab=\'dashboard\']').click()" class="text-primary hover:text-secondary font-medium">View Timeline</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-blue-400">#LN-15200</td>
+                                    <td class="px-6 py-4 dark:text-white font-medium">Pre-Approval Assessment</td>
+                                    <td class="px-6 py-4 dark:text-gray-300">$450,000</td>
+                                    <td class="px-6 py-4 text-gray-500">Aug 15, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold text-xs inline-block">Approved</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-primary hover:text-secondary font-medium">Download Letter</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Tab -->
+            <div id="tab-documents" class="tab-content hidden fade-in">
+                <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-2">Document Management</h1>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">Upload and manage all required documentation for your loan applications.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Upload Area -->
+                    <div class="bg-white dark:bg-carddark p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <h3 class="text-lg font-bold dark:text-white mb-4">Upload New Document</h3>
+                        
+                        <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-8 text-center hover:border-primary transition-colors cursor-pointer mb-6 group">
+                            <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="ph-bold ph-upload-simple text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold dark:text-white mb-1">Click to upload or drag and drop</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">PDF, JPG, PNG (Max 10MB)</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Document Type</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                    <option>Salary Slips (Last 3 Months)</option>
+                                    <option>Bank Statements (Last 6 Months)</option>
+                                    <option>Identity Proof (Passport/ID)</option>
+                                    <option>Property Documents</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded-lg transition-colors shadow-lg">Submit Document</button>
+                        </div>
+                    </div>
+
+                    <!-- Uploaded List -->
+                    <div class="bg-white dark:bg-carddark p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <h3 class="text-lg font-bold dark:text-white mb-4">Uploaded Documents</h3>
+                        <div class="space-y-4">
+                            <!-- Doc Item -->
+                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-green-50 text-green-600 rounded-lg flex items-center justify-center shrink-0">
+                                        <i class="ph-fill ph-file-pdf text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm dark:text-white">Passport_Copy.pdf</h4>
+                                        <p class="text-xs text-green-600 flex items-center gap-1"><i class="ph-bold ph-check"></i> Verified</p>
+                                    </div>
+                                </div>
+                                <button class="text-gray-400 hover:text-primary"><i class="ph-bold ph-eye text-xl"></i></button>
+                            </div>
+                            
+                            <!-- Doc Item -->
+                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-blue-50 text-primary rounded-lg flex items-center justify-center shrink-0">
+                                        <i class="ph-fill ph-file-pdf text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm dark:text-white">Bank_Statement_H1.pdf</h4>
+                                        <p class="text-xs text-gray-500">Uploaded Oct 03</p>
+                                    </div>
+                                </div>
+                                <button class="text-gray-400 hover:text-primary"><i class="ph-bold ph-eye text-xl"></i></button>
+                            </div>
+                            
+                            <!-- Doc Item (Required) -->
+                            <div class="flex items-center justify-between p-4 border-2 border-dashed border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-900/10 rounded-xl">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-red-100 text-red-500 rounded-lg flex items-center justify-center shrink-0">
+                                        <i class="ph-fill ph-warning-circle text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-red-600 dark:text-red-400">Salary Slips Missing</h4>
+                                        <p class="text-xs text-red-500">Required for Bank Processing</p>
+                                    </div>
+                                </div>
+                                <button class="text-sm font-bold text-red-600 hover:text-red-700">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMI History Tab -->
+            <div id="tab-emihistory" class="tab-content hidden fade-in">
+                <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-2">EMI Calculations</h1>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">Review your past calculator estimates to compare scenarios.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- EMI Card -->
+                    <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Scenario A: Home Purchase</h3>
+                                <p class="text-xs text-gray-500 mt-1">Calculated on Sep 28, 2024</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-primary dark:text-blue-400">$3,727</span><span class="text-sm text-gray-500">/mo</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Loan Amount</span>
+                                <span class="font-bold dark:text-white">$500,000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Interest Rate</span>
+                                <span class="font-bold dark:text-white">6.5% p.a.</span>
+                            </div>
+                            <div class="flex justify-between pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Tenure</span>
+                                <span class="font-bold dark:text-white">20 Years</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex gap-3">
+                            <a href="index.html" class="flex-1 text-center bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white py-2 rounded-lg font-medium transition-colors">Recalculate</a>
+                            <a href="booknow.html" class="flex-1 text-center bg-primary hover:bg-secondary text-white py-2 rounded-lg font-medium transition-colors">Apply with this</a>
+                        </div>
+                    </div>
+                    
+                    <!-- EMI Card -->
+                    <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Scenario B: Shorter Tenure</h3>
+                                <p class="text-xs text-gray-500 mt-1">Calculated on Sep 28, 2024</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-primary dark:text-blue-400">$4,355</span><span class="text-sm text-gray-500">/mo</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Loan Amount</span>
+                                <span class="font-bold dark:text-white">$500,000</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Interest Rate</span>
+                                <span class="font-bold dark:text-white">6.5% p.a.</span>
+                            </div>
+                            <div class="flex justify-between pb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Tenure</span>
+                                <span class="font-bold dark:text-white">15 Years</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex gap-3">
+                            <a href="index.html" class="flex-1 text-center bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white py-2 rounded-lg font-medium transition-colors">Recalculate</a>
+                            <a href="booknow.html" class="flex-1 text-center bg-primary hover:bg-secondary text-white py-2 rounded-lg font-medium transition-colors">Apply with this</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile & Settings Tabs Combined -->
+            <div id="tab-profile" class="tab-content hidden fade-in">
+                <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-8">My Profile</h1>
+                
+                <div class="bg-white dark:bg-carddark p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 max-w-3xl">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center text-primary text-3xl font-bold">JD</div>
+                            <button class="text-sm font-medium text-primary hover:text-secondary">Change Photo</button>
+                        </div>
+                        
+                        <div class="flex-1 w-full space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
+                                    <input type="text" value="John" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
+                                    <input type="text" value="Doe" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                    <input type="email" value="john.doe@example.com" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white" disabled>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+                                    <input type="tel" value="+1 (555) 123-4567" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Mailing Address</label>
+                                <textarea rows="3" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">123 Example Street, Apt 4B&#10;New York, NY 10001</textarea>
+                            </div>
+
+                            <div class="flex justify-end gap-4 border-t border-gray-100 dark:border-gray-800 pt-6">
+                                <button class="px-6 py-2.5 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">Cancel</button>
+                                <button class="px-6 py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-secondary transition-colors">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="tab-settings" class="tab-content hidden fade-in">
+                <h1 class="text-2xl md:text-3xl font-heading font-bold dark:text-white mb-8">Account Settings</h1>
+                
+                <div class="bg-white dark:bg-carddark p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 max-w-3xl space-y-8">
+                    
+                    <div>
+                        <h3 class="text-lg font-bold dark:text-white mb-4">Password & Security</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Password</label>
+                                <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">New Password</label>
+                                    <input type="password" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Confirm New Password</label>
+                                    <input type="password" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                </div>
+                            </div>
+                            <button class="px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-secondary transition-colors">Update Password</button>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-8">
+                        <h3 class="text-lg font-bold dark:text-white mb-4">Notification Preferences</h3>
+                        <div class="space-y-4">
+                            <label class="flex items-center gap-3">
+                                <input type="checkbox" checked class="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">Email notifications for application updates</span>
+                            </label>
+                            <label class="flex items-center gap-3">
+                                <input type="checkbox" checked class="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">SMS alerts for important deadlines</span>
+                            </label>
+                            <label class="flex items-center gap-3">
+                                <input type="checkbox" class="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">Marketing and promotional offers</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script specifically for the dashboard -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sidebar = document.getElementById("sidebar");
+            const openSidebarBtn = document.getElementById("open-sidebar");
+            const closeSidebarBtn = document.getElementById("close-sidebar");
+            const overlay = document.getElementById("sidebar-overlay");
+            
+            function openSidebar() {
+                sidebar.classList.remove("-translate-x-full");
+                overlay.classList.remove("hidden");
+                setTimeout(() => {
+                    overlay.classList.remove("opacity-0", "pointer-events-none");
+                    overlay.classList.add("opacity-100");
+                }, 10);
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.remove("opacity-100");
+                overlay.classList.add("opacity-0", "pointer-events-none");
+                setTimeout(() => {
+                    overlay.classList.add("hidden");
+                }, 300);
+            }
+            
+            if(openSidebarBtn) openSidebarBtn.addEventListener("click", openSidebar);
+            if(closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
+            if(overlay) overlay.addEventListener("click", closeSidebar);
+
+            // Tab Switching Logic
+            const navLinks = document.querySelectorAll('.nav-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active styling from all links
+                    navLinks.forEach(l => {
+                        l.classList.remove('bg-primary/10', 'text-primary', 'dark:text-blue-400');
+                        l.classList.add('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-50', 'dark:hover:bg-slate-800');
+                        
+                        // Icons styling
+                        const icon = l.querySelector('i');
+                        if(icon) {
+                            icon.classList.remove('ph-fill');
+                            icon.classList.add('ph');
+                        }
+                    });
+
+                    // Add active styling to clicked link
+                    link.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-50', 'dark:hover:bg-slate-800');
+                    link.classList.add('bg-primary/10', 'text-primary', 'dark:text-blue-400');
+                    const activeIcon = link.querySelector('i');
+                    if(activeIcon) {
+                        activeIcon.classList.remove('ph');
+                        activeIcon.classList.add('ph-fill');
+                    }
+
+                    // Hide all tabs
+                    tabContents.forEach(tab => {
+                        tab.classList.remove('block');
+                        tab.classList.add('hidden');
+                    });
+
+                    // Show target tab
+                    const targetId = 'tab-' + link.getAttribute('data-tab');
+                    const targetTab = document.getElementById(targetId);
+                    if(targetTab) {
+                        targetTab.classList.remove('hidden');
+                        targetTab.classList.add('block');
+                    }
+
+                    // On mobile/tablet (<=1024px roughly corresponds to lg in tailwind), close sidebar after selection
+                    if(window.innerWidth < 1024) {
+                        closeSidebar();
+                    }
+                });
+            });
+            
+            // Toggle Logic for Sidebar
+            const themeToggleBtn = document.getElementById("theme-toggle-sidebar");
+            const dirToggleBtn = document.getElementById("dir-toggle-sidebar");
+            const html = document.documentElement;
+
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener("click", () => {
+                    html.classList.toggle("dark");
+                    if (html.classList.contains("dark")) {
+                        localStorage.setItem("theme", "dark");
+                    } else {
+                        localStorage.setItem("theme", "light");
+                    }
+                });
+            }
+
+            if (dirToggleBtn) {
+                dirToggleBtn.addEventListener("click", () => {
+                    if (html.getAttribute("dir") === "ltr") {
+                        html.setAttribute("dir", "rtl");
+                        localStorage.setItem("dir", "rtl");
+                    } else {
+                        html.setAttribute("dir", "ltr");
+                        localStorage.setItem("dir", "ltr");
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

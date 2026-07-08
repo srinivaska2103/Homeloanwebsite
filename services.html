@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F4C81'><path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/></svg>">
+    <title>Services | PrimeNest Home Loan Advisors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-house-line text-primary text-3xl"></i>
+                    <a href="index.html" class="font-heading font-bold text-xl tracking-tight text-primary dark:text-white">
+                        PrimeNest<span class="text-secondary">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 text-sm xl:text-base">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
+                    <a href="home2.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
+                    <a href="aboutus.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">About Us</a>
+                    <a href="services.html" class="text-primary dark:text-white font-medium hover:text-secondary transition-colors">Services</a>
+                    <a href="gallery.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Gallery</a>
+                    <a href="pricing.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
+                    <a href="dashboard.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
+                </div>
+
+                <!-- Action Buttons & Toggles -->
+                <div class="hidden lg:flex items-center space-x-2 xl:space-x-4 text-sm xl:text-base">
+                    <!-- Toggles -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300" aria-label="Toggle Dark Mode">
+                        <i class="ph ph-moon text-xl dark:hidden"></i>
+                        <i class="ph ph-sun text-xl hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300 text-sm font-semibold" aria-label="Toggle Direction">
+                        LTR
+                    </button>
+                    
+                    <a href="login.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Portal Login</a>
+                    <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors shadow-lg shadow-primary/30">Book Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
+                <a href="aboutus.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">About Us</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800">Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Gallery</a>
+                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
+                <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
+                <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-col gap-3">
+                    <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                        <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Theme</span>
+                        <button id="theme-toggle-mobile" class="text-gray-600 dark:text-gray-300 p-1">
+                            <i class="ph ph-moon text-lg dark:hidden"></i>
+                            <i class="ph ph-sun text-lg hidden dark:block"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                        <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Direction</span>
+                        <button id="dir-toggle-mobile" class="text-gray-600 dark:text-gray-300 p-1 text-sm font-bold">
+                            LTR
+                        </button>
+                    </div>
+                    <a href="login.html" class="w-full text-center px-4 py-2 border border-primary text-primary dark:text-white rounded-lg font-medium">Portal Login</a>
+                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-slate-50 dark:bg-slate-900 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-8 text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
+                        Complete Home Loan & <br class="hidden lg:block"/>
+                        <span class="text-primary dark:text-blue-400">Mortgage Advisory Solutions</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
+                        Expert guidance to help you navigate the complex world of home financing. We secure the best rates, favorable terms, and ensure a seamless experience from planning to disbursement.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="booknow.html" class="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/30 hover:-translate-y-1 hover:shadow-primary/40 transition-all text-center">
+                            Book Free Consultation
+                        </a>
+                        <a href="contact.html" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-xl font-bold shadow-sm hover:bg-gray-50 dark:hover:bg-slate-700 hover:-translate-y-1 transition-all text-center">
+                            Apply Now
+                        </a>
+                    </div>
+                </div>
+                <div class="relative w-full max-w-lg mx-auto lg:max-w-none">
+                    <img src="assets/servicehero" alt="Professional Financial Advisor" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl z-20 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Our Core Services -->
+    <section class="py-20 bg-white dark:bg-bgdark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900 dark:text-white">Our Core Services</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg">Comprehensive loan solutions tailored to every property buyer's unique needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Home Loan1" alt="Home Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-house text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Home Loan</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Financing for your new residential property purchase with ease.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Mortgage Advisory1" alt="Mortgage Advisory" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-bank text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Mortgage Advisory</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Expert guidance on optimal mortgage structures and lender selection.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Loan Against" alt="Loan Against Property" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-buildings text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Loan Against Property</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Unlock the hidden value of your property for liquidity needs.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Construction Loan" alt="Construction Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-hammer text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Construction Loan</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Tranche-based funding for building your dream home from scratch.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Plot Purchase Loan1" alt="Plot Purchase Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-map-trifold text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Plot Purchase Loan</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Dedicated loans for buying residential land plots for future use.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:-translate-y-2 flex flex-col">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/Home Renovation" alt="Home Renovation Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                            <a href="booknow.html" class="inline-block bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-secondary transition-colors w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="ph-fill ph-paint-brush text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold dark:text-white">Home Renovation Loan</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Finance your home improvement and remodeling projects.</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Loan Advisory Services -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900 dark:text-white">Loan Advisory Services</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg">Expert consultation to optimize your long-term financial planning.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">Loan Eligibility</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Accurately evaluate your borrowing capacity based on current financials before you apply.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">Bank Comparison</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">We analyze and compare 25+ top lenders to find the one that fits before you apply your exact profile.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">Interest Rate Guidance</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Navigate floating vs. fixed rates and   25+ top lenders to find secure the most  competitive interest options.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">Financial Planning</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Holistic advice aligning your property purchase with your broader financial goals.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">EMI Planning</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Structure your down payment and loan tenure to ensure comfortable monthly repayments.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border-l-4 border-primary hover:shadow-md transition-shadow">
+                    <h4 class="text-xl font-bold mb-3 dark:text-white">Credit Score </h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Review your credit history and provide actionable steps to improve your CIBIL score.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Documentation Support -->
+    <section class="py-20 bg-white dark:bg-bgdark border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-900 dark:text-white">Seamless Documentation Support</h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">
+                        Paperwork is often the most stressful part of securing a loan. Our dedicated team manages the entire documentation process, ensuring zero errors and faster bank approvals.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">Document Verification</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">KYC Assistance</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">Income Proof Review</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">Property Document Review</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">Legal Documentation Support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-primary text-xl mt-0.5"></i>
+                            <span class="text-slate-800 dark:text-gray-300 font-medium">Application Submission</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 lg:order-2 w-full max-w-lg mx-auto lg:max-w-none">
+                    <img src="assets/serviceimg" alt="Documentation Review" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Loan Process -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900 dark:text-white">Our 8-Step Loan Process</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg">A transparent, streamlined journey from consultation to keys.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-6 relative">
+                <!-- Connective Line (Large screens Only) -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 dark:bg-gray-700 -translate-y-1/2 z-0"></div>
+                
+                <!-- Steps -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">1</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Free Consultation</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">2</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Eligibility Check</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">3</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Loan Planning</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">4</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Document Collection</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">5</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Bank Selection</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">6</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Application Submission</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">7</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Approval Process</h4>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm text-center relative z-10 border border-gray-100 dark:border-gray-700">
+                    <div class="w-10 h-10 mx-auto bg-secondary text-white rounded-full flex items-center justify-center font-bold mb-3 text-lg ring-4 ring-slate-50 dark:ring-slate-900">8</div>
+                    <h4 class="font-bold text-sm dark:text-white leading-tight">Loan Disbursement</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Industries & Customer Types We Serve -->
+    <section class="py-20 bg-white dark:bg-bgdark border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900 dark:text-white">Who We Serve</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg">Customized loan profiles for diverse customer demographics.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">First-Time Buyers</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Salaried Employees</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Self-Employed</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Business Owners</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Property Investors</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">NRI Customers</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Builders & Developers</h4>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-800 hover:border-primary transition-colors cursor-default">
+                    <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Commercial Property </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- 9. Frequently Asked Questions -->
+    <section class="py-20 bg-white dark:bg-bgdark border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg">Clear answers to your most pressing concerns.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>Which home loan is right for me?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        The right home loan depends on your income, credit score, property type, and repayment capacity. Our advisors assess these factors during a free consultation to recommend the most suitable product.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>What documents are required?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        Standard documents include KYC (ID/Address proof), income proof (salary slips/ITR), bank statements, and property documents. Requirements vary slightly based on employment type.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>How long does loan approval take?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        With complete documentation, pre-approvals can happen within 48-72 hours. Full disbursement typically takes 7-14 working days depending on the bank and property legal checks.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>Can I transfer my existing loan?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        Yes, a Balance Transfer allows you to move your loan to another lender offering lower interest rates, which can significantly reduce your EMI or tenure.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>What is the minimum credit score?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        Most banks prefer a CIBIL score of 750 or above for the best rates. However, loans are available for lower scores (650+) with slightly varied terms.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>Do you help with documentation?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        Absolutely. We provide end-to-end documentation support, ensuring your file is perfectly prepped for rapid bank approval.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>Is online consultation available?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        Yes, we offer fully remote consultations via phone or video call, and digital document collection for your convenience.
+                    </div>
+                </details>
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                        <span>Are there any hidden charges?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 dark:text-gray-400 p-6 pt-0 text-sm leading-relaxed">
+                        We maintain 100% transparency. Any processing fees levied by the bank will be clearly communicated upfront.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Final Call to Action -->
+    <section class="py-24 relative overflow-hidden bg-primary text-white text-center">
+        <!-- Abstract patterns for large banner -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-8 drop-shadow-md">
+                Ready to Secure Your Dream Home?
+            </h2>
+            <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                Take the first step towards seamless financing today.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="booknow.html" class="w-full sm:w-auto px-8 py-4 bg-white text-primary rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl hover:-translate-y-1 transform">
+                    Book Free Consultation
+                </a>
+                <a href="contact.html" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-colors shadow-xl hover:-translate-y-1 transform">
+                    Apply for Home Loan
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="bg-bgdark text-gray-300 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html">
+
+                    
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="ph-fill ph-house-line text-primary text-3xl"></i>
+                        <span class="font-heading font-bold text-xl tracking-tight text-white">PrimeNest.</span>
+                    </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Premium home loan and mortgage advisory services helping families finance their dream homes with confidence since 2010.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-linkedin-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-twitter-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="home2.html" class="hover:text-primary transition-colors">Home 2</a></li>
+                        <li><a href="aboutus.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                       
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                         <li><a href="dashboard.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                        <li><a href="404.html" class="hover:text-primary transition-colors">404 Error</a></li>
+                        <li><a href="comingsoon.html" class="hover:text-primary transition-colors">Coming Soon</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Balance Transfer</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Loan Against Property</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Plot Purchase Loans</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Refinancing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact / Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-4">Subscribe to get the latest updates on mortgage rates.</p>
+                    <form class="mb-6 flex">
+                        <input type="email" placeholder="Your email address" class="w-full bg-slate-800 border border-slate-700 text-sm px-4 py-2 rounded-l-lg focus:outline-none focus:border-primary text-white" required>
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-lg text-white transition-colors">
+                            <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </form>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p class="flex items-center gap-2"><i class="ph-fill ph-phone"></i> +1 (800) 123-4567</p>
+                        <p class="flex items-center gap-2"><i class="ph-fill ph-envelope"></i> hello@primenest.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>&copy; <span id="currentYear"></span> PrimeNest Advisors. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to top -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-slate-800 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors z-40" aria-label="Back to top">
+            <i class="ph ph-arrow-up text-xl"></i>
+        </button>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

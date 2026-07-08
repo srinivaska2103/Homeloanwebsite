@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F4C81'><path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/></svg>">
+    <title>Gallery | PrimeNest Home Loan Advisors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-house-line text-primary text-3xl"></i>
+                    <a href="index.html" class="font-heading font-bold text-xl tracking-tight text-primary dark:text-white">
+                        PrimeNest<span class="text-secondary">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 text-sm xl:text-base">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
+                    <a href="home2.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
+                    <a href="aboutus.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">About Us</a>
+                    <a href="services.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Services</a>
+                    <a href="gallery.html" class="text-primary dark:text-white font-medium hover:text-secondary transition-colors">Gallery</a>
+                    <a href="pricing.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
+                    <a href="dashboard.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
+                </div>
+
+                <!-- Action Buttons & Toggles -->
+                <div class="hidden lg:flex items-center space-x-2 xl:space-x-4 text-sm xl:text-base">
+                    <!-- Toggles -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300" aria-label="Toggle Dark Mode">
+                        <i class="ph ph-moon text-xl dark:hidden"></i>
+                        <i class="ph ph-sun text-xl hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300 text-sm font-semibold" aria-label="Toggle Direction">
+                        LTR
+                    </button>
+                    
+                    <a href="login.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Portal Login</a>
+                    <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors shadow-lg shadow-primary/30">Book Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
+                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
+                <a href="aboutus.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">About Us</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800">Gallery</a>
+                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
+                <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
+                <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-col gap-3">
+                    <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                        <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Theme</span>
+                        <button id="theme-toggle-mobile" class="text-gray-600 dark:text-gray-300 p-1">
+                            <i class="ph ph-moon text-lg dark:hidden"></i>
+                            <i class="ph ph-sun text-lg hidden dark:block"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                        <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Direction</span>
+                        <button id="dir-toggle-mobile" class="text-gray-600 dark:text-gray-300 p-1 text-sm font-bold">
+                            LTR
+                        </button>
+                    </div>
+                    <a href="login.html" class="w-full text-center px-4 py-2 border border-primary text-primary dark:text-white rounded-lg font-medium">Portal Login</a>
+                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+   <!-- Gallery Hero Section -->
+<section class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 overflow-hidden">
+    <!-- Ambient Background Decorative Blob -->
+    <div class="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-blue-500/10 dark:bg-slate-800/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Side: Copywriting Content (Takes 5 columns on large screens) -->
+            <div class="text-center lg:text-left space-y-6 lg:col-span-5 max-w-2xl mx-auto lg:mx-0">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-200/60 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-slate-300/30">
+                    Visual Showcase
+                </span>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 dark:text-white leading-tight">
+                    Explore Our Modern Spaces
+                </h1>
+                
+                <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
+                    Take a virtual journey through our latest architectural designs and property collections. Every detail is curated to deliver premium functionality and comfort.
+                </p>
+                
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#full-gallery" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-bold text-white bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-slate-200 dark:text-slate-900 rounded-xl shadow-md hover:shadow-lg transition duration-150 ease-in-out whitespace-nowrap">
+                        View Full Gallery
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm transition duration-150 ease-in-out whitespace-nowrap">
+                        Schedule a Tour
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Single Unified Hero Image (Takes 7 columns on large screens) -->
+            <div class="lg:col-span-7 w-full max-w-lg sm:max-w-xl md:max-w-2xl mx-auto lg:max-w-none">
+                <div class="group overflow-hidden rounded-2xl shadow-2xl border border-slate-200/50 dark:border-slate-800 relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
+                    <img 
+                        src="assets/galleryhero" 
+                        alt="Modern architecture luxury villa space" 
+                        class="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105" 
+                    />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 rounded-full bg-primary text-white font-medium text-sm">All</button>
+                <button class="px-6 py-2 rounded-full bg-white dark:bg-carddark text-gray-600 dark:text-gray-300 font-medium text-sm border border-gray-200 dark:border-gray-700 hover:border-primary">Clients</button>
+                <button class="px-6 py-2 rounded-full bg-white dark:bg-carddark text-gray-600 dark:text-gray-300 font-medium text-sm border border-gray-200 dark:border-gray-700 hover:border-primary">Office</button>
+                <button class="px-6 py-2 rounded-full bg-white dark:bg-carddark text-gray-600 dark:text-gray-300 font-medium text-sm border border-gray-200 dark:border-gray-700 hover:border-primary">Properties</button>
+            </div>
+
+            <!-- Images -->
+           <!-- Gallery / Feature Cards Grid (6 Items) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Card 1: Happy Clients -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/Happy family celebrating new home key milestone" 
+             alt="Happy family celebrating new home key milestone" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Happy Clients
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 2: Premium Properties -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/Premium minimalist property facade architectural design" 
+             alt="Premium minimalist property facade architectural design" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Premium Properties
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 3: Our Team -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/Professional corporate advisors team meeting space" 
+             alt="Professional corporate advisors team meeting space" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Our Team
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 4: Consultation Sessions -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/One-on-one mortgage consultation review" 
+             alt="One-on-one mortgage consultation review" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Expert Consultation
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 5: Modern Offices -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/Corporate finance district branch office layout" 
+             alt="Corporate finance district branch office layout" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Our Offices
+            </p>
+        </div>
+    </div>
+
+    <!-- Card 6: Closing Success -->
+    <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+        <img src="assets/Successful mortgage signing transaction deal achievement" 
+             alt="Successful mortgage signing transaction deal achievement" 
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+        <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+            <p class="text-white font-bold text-xl tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Loan Approvals
+            </p>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Client Consultation Gallery Section -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300 border border-primary/20 mb-4">
+                    Client Experience
+                </span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4">
+                    Client Consultation Gallery
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                    Discover how we guide you through every step of your home loan journey, from initial planning to closing the deal.
+                </p>
+            </div>
+
+            <!-- Client Consultation Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: One-on-one consultations -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/One-on-one consultation meeting" 
+                         alt="One-on-one consultation meeting" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            One-on-One Consultations
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Financial planning sessions -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/Financial planning and calculato" 
+                         alt="Financial planning and calculator" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            Financial Planning Sessions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Loan discussions -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/Loan discussion and handshake" 
+                         alt="Loan discussion and handshake" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            Loan Discussions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Document verification -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/Document Verification" 
+                         alt="Document verification and signing" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            Document Verification
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Virtual meetings -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/Virtual Meetings" 
+                         alt="Virtual meeting via video call" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            Virtual Meetings
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Customer guidance -->
+                <div class="relative group rounded-xl overflow-hidden shadow-lg aspect-square bg-slate-100 dark:bg-slate-800 transition-all duration-300">
+                    <img src="assets/Customer guidance and explanation" 
+                         alt="Customer guidance and explanation" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                    <div class="absolute inset-0 bg-[#0F4C81]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                        <p class="text-white font-bold text-xl text-center tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            Customer Guidance
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Page Closing CTA Section -->
+<section class="relative py-20 md:py-28 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 overflow-hidden text-white transition-colors duration-300">
+    
+    <!-- Subtle Grid Background Overlay Patterns -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none"></div>
+
+    <!-- Immersive Gallery Backdrop Blend Layer (Adjusted for better contrast against new gradient) -->
+    <div class="absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none select-none">
+        <div class="grid grid-cols-4 gap-4 transform -rotate-6 scale-110">
+            <div class="w-full aspect-square rounded-xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&q=50')"></div>
+            <div class="w-full aspect-square rounded-xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=300&q=50')"></div>
+            <div class="w-full aspect-square rounded-xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=300&q=50')"></div>
+            <div class="w-full aspect-square rounded-xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=50')"></div>
+        </div>
+    </div>
+
+    <!-- Enhanced Focal Glow Center Point Spotlighting #0F4C81 -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#0F4C81]/30 to-[#2F80ED]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl mx-auto text-center space-y-8">
+            
+            <!-- Headline Wrapper -->
+            <div class="space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#2F80ED] bg-[#2F80ED]/10 px-4 py-1.5 rounded-full inline-block border border-[#2F80ED]/20">
+                    Like what you see?
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold tracking-tight leading-tight">
+                    Let’s Turn Inspiration <br class="hidden sm:inline" />
+                    <span class="bg-gradient-to-r from-blue-400 to-[#2F80ED] bg-clip-text text-transparent">Into Your Reality</span>
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
+                    Whether you are ready to secure a premium property or need tailored advisor guidance, our experts are standing by.
+                </p>
+            </div>
+
+            <!-- Responsive Dynamic Button Group -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2 max-w-sm sm:max-w-none mx-auto">
+                
+                <!-- Primary Action: Book Tour -->
+                <a href="#schedule-tour" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-900 bg-white hover:bg-slate-100 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200 ease-out whitespace-nowrap group">
+                    Schedule an On-Site Tour
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+                
+                <!-- Secondary Action: Talk to Advisor -->
+                <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#0F4C81] hover:bg-[#2F80ED] rounded-xl shadow-md border border-white/10 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-200 ease-out whitespace-nowrap">
+                    Speak with an Advisor
+                </a>
+            </div>
+
+            <!-- Real-time Social Proof Validation Bar -->
+            <div class="pt-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs sm:text-sm text-slate-400">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Advisors Online Now
+                </div>
+                <div class="hidden sm:block text-slate-800">|</div>
+                <div>Free Consultation Included</div>
+                <div class="hidden sm:block text-slate-800">|</div>
+                <div>No Obligations</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+     <!-- Footer -->
+    <footer class="bg-bgdark text-gray-300 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html">
+
+                    
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="ph-fill ph-house-line text-primary text-3xl"></i>
+                        <span class="font-heading font-bold text-xl tracking-tight text-white">PrimeNest.</span>
+                    </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Premium home loan and mortgage advisory services helping families finance their dream homes with confidence since 2010.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-linkedin-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"><i class="ph-fill ph-twitter-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="home2.html" class="hover:text-primary transition-colors">Home 2</a></li>
+                        <li><a href="aboutus.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                       
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                         <li><a href="dashboard.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                        <li><a href="404.html" class="hover:text-primary transition-colors">404 Error</a></li>
+                        <li><a href="comingsoon.html" class="hover:text-primary transition-colors">Coming Soon</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Balance Transfer</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Loan Against Property</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Plot Purchase Loans</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Refinancing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact / Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-4">Subscribe to get the latest updates on mortgage rates.</p>
+                    <form class="mb-6 flex">
+                        <input type="email" placeholder="Your email address" class="w-full bg-slate-800 border border-slate-700 text-sm px-4 py-2 rounded-l-lg focus:outline-none focus:border-primary text-white" required>
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-lg text-white transition-colors">
+                            <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </form>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p class="flex items-center gap-2"><i class="ph-fill ph-phone"></i> +1 (800) 123-4567</p>
+                        <p class="flex items-center gap-2"><i class="ph-fill ph-envelope"></i> hello@primenest.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>&copy; <span id="currentYear"></span> PrimeNest Advisors. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to top -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-slate-800 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors z-40" aria-label="Back to top">
+            <i class="ph ph-arrow-up text-xl"></i>
+        </button>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

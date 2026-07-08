@@ -1,0 +1,738 @@
+const fs = require('fs');
+
+const content = `    <!-- 1. Hero Banner -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-blue-100/50 dark:bg-blue-900/20 blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <div class="fade-in max-w-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/50 text-primary dark:text-blue-300 text-sm font-semibold mb-6">#1 Mortgage Advisory Firm</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
+                        Finance Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dream Home</span> With Confidence
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Navigate the complex world of home loans with our expert advisors. We compare 50+ lenders to find you the lowest interest rates and best terms, absolutely free.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="booknow.html" class="inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-secondary shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
+                            Book Free Consultation
+                            <i class="ph ph-arrow-right ml-2 text-xl"></i>
+                        </a>
+                        <a href="#eligibility" class="inline-flex justify-center items-center px-8 py-3.5 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-lg text-slate-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-all">
+                            Check Eligibility
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-4 items-center mt-6 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-bank text-secondary text-2xl"></i>
+                            <span class="text-sm font-bold text-slate-800 dark:text-gray-200">50+ Banks</span>
+                        </div>
+                        <div class="w-px h-6 bg-gray-300 dark:bg-gray-600"></div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-shield-check text-accent text-2xl"></i>
+                            <span class="text-sm font-bold text-slate-800 dark:text-gray-200">100% Secure</span>
+                        </div>
+                        <div class="w-px h-6 bg-gray-300 dark:bg-gray-600"></div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-certificate text-yellow-500 text-2xl"></i>
+                            <span class="text-sm font-bold text-slate-800 dark:text-gray-200">Certified Advisors</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in relative lg:ml-auto w-full max-w-lg">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] transform hover:scale-[1.02] transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional family and new home" class="w-full h-full object-cover">
+                        <!-- Floating Card overlay -->
+                        <div class="absolute bottom-6 left-6 right-6 glass-effect p-4 rounded-xl shadow-lg border border-white/20">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                                    <i class="ph-fill ph-trend-down text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-slate-800 dark:text-white">Rates starting from</p>
+                                    <p class="text-2xl font-bold text-primary dark:text-blue-400">8.35% p.a.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Loan Categories -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-4">Tailored Solutions For Every Need</h2>
+                <p class="text-gray-600 dark:text-gray-400">We offer a wide range of loan products to suit your specific financial requirements.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+                <!-- Home Loan -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-xl flex items-center justify-center mb-4 text-primary dark:text-blue-400 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-house text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Home Loan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Finance up to 90% of property value with long tenures.</p>
+                </div>
+                
+                <!-- Mortgage Loan -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-4 text-accent group-hover:scale-110 transition-transform">
+                        <i class="ph ph-bank text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Mortgage Loan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Secure financing against your existing residential property.</p>
+                </div>
+
+                <!-- Loan Against Property -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4 text-purple-600 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-buildings text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Loan Against Property</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Unlock the value of your commercial or residential property.</p>
+                </div>
+
+                <!-- Balance Transfer -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-4 text-orange-500 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-arrows-left-right text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Balance Transfer</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Switch to lower interest rates and save on your EMI.</p>
+                </div>
+
+                <!-- Construction Loan -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-4 text-yellow-600 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-crane text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Construction Loan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Customized funds for building your home from scratch.</p>
+                </div>
+
+                <!-- Plot Purchase Loan -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4 text-red-500 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-map-pin text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Plot Purchase Loan</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Get financing for purchasing a plot of land for your future home.</p>
+                </div>
+
+                <!-- Home Renovation -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mb-4 text-teal-600 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-paint-roller text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Home Renovation</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Upgrade, repair, or redesign your current home easily.</p>
+                </div>
+
+                <!-- First-Time Buyer -->
+                <div class="group bg-bglight dark:bg-carddark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-xl flex items-center justify-center mb-4 text-pink-500 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">First-Time Buyer</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Special guidance, lower rates, and grants for new buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Why Choose Us -->
+    <section class="py-20 relative overflow-hidden bg-primary dark:bg-slate-900">
+        <div class="absolute inset-0 opacity-10 dark:opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-heading font-bold text-white mb-4">Why Partner With PrimeNest?</h2>
+                <p class="text-blue-100 text-lg max-w-2xl mx-auto">We simplify the mortgage process, offering unbiased advice and personalized solutions to make your dream home a reality.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+                <!-- Point 1 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-user-circle-gear text-4xl text-blue-300 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Expert Financial Advisors</h4>
+                    <p class="text-blue-100 text-sm">Certified experts providing unbiased, tailored advice.</p>
+                </div>
+                <!-- Point 2 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-trend-down text-4xl text-accent mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Lowest Interest Rate</h4>
+                    <p class="text-blue-100 text-sm">We negotiate hard to get you the most competitive rates available.</p>
+                </div>
+                <!-- Point 3 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-shield-check text-4xl text-yellow-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">100% Transparent</h4>
+                    <p class="text-blue-100 text-sm">No hidden fees, no surprises. Complete clarity on all charges.</p>
+                </div>
+                <!-- Point 4 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-rocket-launch text-4xl text-red-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Fast Loan Approval</h4>
+                    <p class="text-blue-100 text-sm">Expedited processing paths with our priority banking partners.</p>
+                </div>
+                <!-- Point 5 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-handshake text-4xl text-purple-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Personalized Solutions</h4>
+                    <p class="text-blue-100 text-sm">Structuring loans to fit your exact income and tax situation.</p>
+                </div>
+                <!-- Point 6 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-leaf text-4xl text-green-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Paperless Process</h4>
+                    <p class="text-blue-100 text-sm">100% digital documentation via our secure client portal.</p>
+                </div>
+                <!-- Point 7 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-buildings text-4xl text-orange-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Multiple Partnerships</h4>
+                    <p class="text-blue-100 text-sm">Tie-ups with over 50 leading banks and NBFCs across India.</p>
+                </div>
+                <!-- Point 8 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <i class="ph-fill ph-headset text-4xl text-pink-400 mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-2">Dedicated Manager</h4>
+                    <p class="text-blue-100 text-sm">A single point of contact from application to final disbursement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Home Loan Process -->
+    <section class="py-20 bg-bglight dark:bg-bgdark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-4">6 Simple Steps to Your New Home</h2>
+                <p class="text-gray-600 dark:text-gray-400">Our streamlined process ensures you get your loan approved fast, with zero stress.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 relative fade-in">
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden lg:block absolute top-10 left-10 right-10 h-0.5 bg-gray-300 dark:bg-gray-700 -z-10"></div>
+                
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-calendar-check text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">1</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Book Consultation</h3>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-check-circle text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">2</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Eligibility Check</h3>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-folder text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">3</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Document Collection</h3>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-scales text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">4</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Bank Comparison</h3>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-seal-check text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">5</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Loan Approval</h3>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 mx-auto bg-white dark:bg-carddark border-4 border-bglight dark:border-bgdark rounded-full shadow-lg flex items-center justify-center mb-6 z-10">
+                        <i class="ph ph-money text-2xl text-primary dark:text-blue-400"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 lg:right-1/2 lg:translate-x-10 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xs">6</div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">Amount Disbursed</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 & 6. Eligibility Checker & EMI Calculator -->
+    <section id="eligibility" class="py-20 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Eligibility Checker -->
+                <div class="bg-bglight dark:bg-carddark rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 fade-in">
+                    <h2 class="text-2xl font-heading font-bold text-slate-900 dark:text-white mb-2">Loan Eligibility Checker</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 text-sm">Find out how much you can borrow based on your profile.</p>
+                    
+                    <form class="space-y-5" onsubmit="event.preventDefault(); alert('Eligibility checked! An advisor will contact you soon.');">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Monthly Income (₹)</label>
+                                <input type="number" placeholder="e.g. 100000" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Age</label>
+                                <input type="number" placeholder="e.g. 35" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Employment Type</label>
+                            <select class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white">
+                                <option>Salaried</option>
+                                <option>Self-Employed Professional</option>
+                                <option>Self-Employed Business</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Existing EMIs (₹/month)</label>
+                            <input type="number" placeholder="e.g. 15000" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Property Value (₹)</label>
+                            <input type="number" placeholder="e.g. 7500000" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-primary hover:bg-secondary text-white rounded-xl font-bold transition-colors shadow-lg shadow-primary/30 mt-4">
+                            Check Eligibility
+                        </button>
+                    </form>
+                </div>
+
+                <!-- EMI Calculator -->
+                <div class="bg-primary rounded-3xl p-8 shadow-xl text-white fade-in relative overflow-hidden">
+                    <!-- Decorative BG -->
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-2xl font-heading font-bold mb-2">EMI Calculator</h2>
+                        <p class="text-blue-100 mb-8 text-sm">Plan your monthly budget.</p>
+
+                        <div class="space-y-6">
+                            <!-- Amount -->
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <label class="font-medium text-blue-100">Loan Amount (₹)</label>
+                                    <span class="font-bold">₹<span id="loanVal">50,00,000</span></span>
+                                </div>
+                                <input type="range" id="loanRange" min="500000" max="50000000" step="100000" value="5000000" class="w-full h-2 bg-blue-900 rounded-lg appearance-none cursor-pointer accent-white">
+                            </div>
+                            
+                            <!-- Interest Rate -->
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <label class="font-medium text-blue-100">Interest Rate (% p.a.)</label>
+                                    <span class="font-bold"><span id="rateVal">8.5</span>%</span>
+                                </div>
+                                <input type="range" id="rateRange" min="7" max="15" step="0.1" value="8.5" class="w-full h-2 bg-blue-900 rounded-lg appearance-none cursor-pointer accent-white">
+                            </div>
+
+                            <!-- Tenure -->
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <label class="font-medium text-blue-100">Tenure (Years)</label>
+                                    <span class="font-bold"><span id="tenureVal">20</span> Years</span>
+                                </div>
+                                <input type="range" id="tenureRange" min="5" max="30" step="1" value="20" class="w-full h-2 bg-blue-900 rounded-lg appearance-none cursor-pointer accent-white">
+                            </div>
+                        </div>
+
+                        <div class="mt-10 bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20">
+                            <div class="text-center mb-6">
+                                <p class="text-blue-200 text-sm mb-1">Monthly EMI</p>
+                                <h3 class="text-4xl font-bold">₹<span id="emiResult">43,391</span></h3>
+                            </div>
+                            <div class="flex justify-between text-sm border-t border-white/20 pt-4">
+                                <div>
+                                    <p class="text-blue-200">Total Interest</p>
+                                    <p class="font-bold">₹<span id="totalInterest">54,13,879</span></p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-blue-200">Total Payable</p>
+                                    <p class="font-bold">₹<span id="totalPayable">1,04,13,879</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Loan Comparison Table -->
+    <section class="py-20 bg-bglight dark:bg-bgdark border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-in">
+                <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-4">Current Top Rates</h2>
+                <p class="text-gray-600 dark:text-gray-400">Compare the best home loan offers from leading banks. Rates are updated daily.</p>
+            </div>
+            
+            <div class="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm fade-in">
+                <table class="w-full text-left border-collapse bg-white dark:bg-carddark">
+                    <thead>
+                        <tr class="bg-gray-50 dark:bg-slate-800 text-slate-700 dark:text-gray-300">
+                            <th class="p-4 font-bold border-b border-gray-200 dark:border-gray-700">Bank Name</th>
+                            <th class="p-4 font-bold border-b border-gray-200 dark:border-gray-700">Interest Rate (p.a.)</th>
+                            <th class="p-4 font-bold border-b border-gray-200 dark:border-gray-700">Processing Fee</th>
+                            <th class="p-4 font-bold border-b border-gray-200 dark:border-gray-700">Max Tenure</th>
+                            <th class="p-4 font-bold border-b border-gray-200 dark:border-gray-700">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 dark:text-gray-400">
+                        <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors border-b border-gray-100 dark:border-gray-800">
+                            <td class="p-4 font-semibold text-slate-900 dark:text-white flex items-center gap-2">SBI</td>
+                            <td class="p-4 text-accent font-bold">8.40% - 9.15%</td>
+                            <td class="p-4">Nil - 0.35%</td>
+                            <td class="p-4">30 Years</td>
+                            <td class="p-4"><a href="booknow.html" class="text-primary dark:text-blue-400 font-medium hover:underline">Apply</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors border-b border-gray-100 dark:border-gray-800">
+                            <td class="p-4 font-semibold text-slate-900 dark:text-white">HDFC Bank</td>
+                            <td class="p-4 text-accent font-bold">8.35% - 8.95%</td>
+                            <td class="p-4">Up to 0.50%</td>
+                            <td class="p-4">30 Years</td>
+                            <td class="p-4"><a href="booknow.html" class="text-primary dark:text-blue-400 font-medium hover:underline">Apply</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors border-b border-gray-100 dark:border-gray-800">
+                            <td class="p-4 font-semibold text-slate-900 dark:text-white">ICICI Bank</td>
+                            <td class="p-4 text-accent font-bold">8.40% - 9.00%</td>
+                            <td class="p-4">0.50% - 1.00%</td>
+                            <td class="p-4">30 Years</td>
+                            <td class="p-4"><a href="booknow.html" class="text-primary dark:text-blue-400 font-medium hover:underline">Apply</a></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-semibold text-slate-900 dark:text-white">Kotak Mahindra Bank</td>
+                            <td class="p-4 text-accent font-bold">8.70% - 9.20%</td>
+                            <td class="p-4">Up to 1.00%</td>
+                            <td class="p-4">25 Years</td>
+                            <td class="p-4"><a href="booknow.html" class="text-primary dark:text-blue-400 font-medium hover:underline">Apply</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center mt-4 text-xs text-gray-500">*Rates are indicative and subject to change based on credit profile and market conditions.</p>
+        </div>
+    </section>
+
+    <!-- 7. Our Banking Partners -->
+    <section class="py-16 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Our Banking Partners</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">We help clients compare loan options across 50+ leading banks and NBFCs to ensure the best possible terms.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">SBI</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">HDFC Bank</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">ICICI Bank</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">Axis Bank</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">Bank of Baroda</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">Punjab National Bank</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">Kotak Mahindra Bank</div>
+                <div class="bg-bglight dark:bg-slate-800 px-6 py-3 rounded-lg font-bold text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700">Canara Bank</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Success Stories, Testimonials, Google Reviews, Stats -->
+    <section class="py-20 bg-bglight dark:bg-bgdark border-t border-gray-100 dark:border-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 fade-in">
+                <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm text-center border border-gray-100 dark:border-gray-800">
+                    <div class="text-4xl font-bold text-primary dark:text-blue-400 mb-2">₹500+</div>
+                    <div class="text-sm font-bold text-slate-800 dark:text-gray-300">Crore Loans Facilitated</div>
+                </div>
+                <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm text-center border border-gray-100 dark:border-gray-800">
+                    <div class="text-4xl font-bold text-primary dark:text-blue-400 mb-2">10,000+</div>
+                    <div class="text-sm font-bold text-slate-800 dark:text-gray-300">Happy Customers</div>
+                </div>
+                <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm text-center border border-gray-100 dark:border-gray-800">
+                    <div class="text-4xl font-bold text-primary dark:text-blue-400 mb-2">98%</div>
+                    <div class="text-sm font-bold text-slate-800 dark:text-gray-300">Approval Assistance</div>
+                </div>
+                <div class="bg-white dark:bg-carddark p-6 rounded-2xl shadow-sm text-center border border-gray-100 dark:border-gray-800">
+                    <div class="text-4xl font-bold text-primary dark:text-blue-400 mb-2">25+</div>
+                    <div class="text-sm font-bold text-slate-800 dark:text-gray-300">Banking Partners</div>
+                </div>
+            </div>
+
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-4">Success Stories & Reviews</h2>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <span class="text-2xl font-bold text-slate-900 dark:text-white">4.9</span>
+                    <div class="flex text-yellow-400 text-xl"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i></div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5">
+                    Based on 1,250+ Google Reviews
+                </p>
+            </div>
+            
+            <!-- Google Reviews Carousel -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar fade-in">
+                
+                <!-- Card 1 -->
+                <div class="snap-center shrink-0 w-80 md:w-96 bg-white dark:bg-carddark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-6 h-6 absolute top-6 right-6 opacity-50">
+                    <div class="flex text-yellow-400 mb-3 text-lg"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic text-sm">"Incredible service! PrimeNest helped me secure a ₹75L loan for my flat in Mumbai. The process was 100% transparent and they got me a lower rate than my own bank offered."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Pooja S." class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Pooja Sharma</h4>
+                            <p class="text-xs text-gray-500">Loan Amount: ₹75 Lakhs | Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="snap-center shrink-0 w-80 md:w-96 bg-white dark:bg-carddark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-6 h-6 absolute top-6 right-6 opacity-50">
+                    <div class="flex text-yellow-400 mb-3 text-lg"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic text-sm">"I transferred my ₹1.2Cr loan through PrimeNest and saved around ₹8,000 on my monthly EMI. The dedicated manager handled all paperwork. Highly recommended for balance transfers!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Rajesh K." class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Rajesh Kumar</h4>
+                            <p class="text-xs text-gray-500">Loan Amount: ₹1.2 Crore | Delhi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="snap-center shrink-0 w-80 md:w-96 bg-white dark:bg-carddark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-6 h-6 absolute top-6 right-6 opacity-50">
+                    <div class="flex text-yellow-400 mb-3 text-lg"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic text-sm">"As a self-employed business owner, getting a home loan is tough. PrimeNest guided me on structuring my financials and got my ₹50L loan approved in 10 days."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Amit P." class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Amit Patel</h4>
+                            <p class="text-xs text-gray-500">Loan Amount: ₹50 Lakhs | Ahmedabad</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Frequently Asked Questions -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">Who can apply for a home loan?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Salaried employees, self-employed professionals, and business owners aged between 21 and 65 years with a stable income source can apply.
+                    </div>
+                </details>
+
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">What documents are required?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Basic KYC (Aadhaar/PAN), 6 months bank statements, latest 3 salary slips (for salaried), IT returns for 2-3 years, and property documents.
+                    </div>
+                </details>
+
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">How is EMI calculated?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        EMI is calculated based on three factors: Loan Principal Amount, Rate of Interest, and Loan Tenure. You can use our EMI calculator above to check.
+                    </div>
+                </details>
+                
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">Can I transfer my existing home loan?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Yes! A Balance Transfer allows you to switch your existing home loan to a new bank offering a lower interest rate, helping you save money.
+                    </div>
+                </details>
+
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">How long does approval take?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Pre-approvals take 24-48 hours. Final sanction and disbursement takes 7-10 working days after property technical and legal verification.
+                    </div>
+                </details>
+
+                <details class="group bg-bglight dark:bg-carddark rounded-xl border border-gray-200 dark:border-gray-700 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white">
+                        <h3 class="font-bold">What is the minimum down payment?</h3>
+                        <span class="relative h-5 w-5 shrink-0">
+                            <i class="ph ph-caret-down absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+                            <i class="ph ph-caret-up absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Banks generally require you to pay 10% to 20% of the property value as a down payment (margin money) from your own funds.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call to Action & Contact -->
+    <section class="py-20 relative overflow-hidden bg-primary dark:bg-slate-900">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-900 dark:from-slate-900 dark:to-slate-800"></div>
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 fade-in">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- CTA Text -->
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">Ready to Own Your Dream Home?</h2>
+                    <p class="text-blue-100 text-lg mb-10">Don't navigate the mortgage maze alone. Book a free consultation with our experts today and secure the best rates.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="booknow.html" class="px-8 py-4 bg-white text-primary rounded-xl font-bold text-center hover:bg-gray-100 transition-colors shadow-xl">
+                            Book a free consultation
+                        </a>
+                        <a href="tel:+919876543210" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-center hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-phone"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/919876543210" target="_blank" class="px-8 py-4 bg-green-500 border border-green-500 text-white rounded-xl font-bold text-center hover:bg-green-600 transition-colors shadow-lg flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-whatsapp-logo"></i> WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-white">
+                        <div class="flex gap-4">
+                            <i class="ph-fill ph-map-pin text-3xl text-blue-300"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Office Address</h4>
+                                <p class="text-blue-100 text-sm">1204, Prime Tower, Financial District, Mumbai, 400001</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="ph-fill ph-envelope text-3xl text-blue-300"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p class="text-blue-100 text-sm">hello@primenest.com</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="ph-fill ph-phone text-3xl text-blue-300"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone Number</h4>
+                                <p class="text-blue-100 text-sm">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="ph-fill ph-clock text-3xl text-blue-300"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Working Hours</h4>
+                                <p class="text-blue-100 text-sm">Mon-Sat: 9:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-carddark p-8 rounded-3xl shadow-2xl relative">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request a Call Back</h3>
+                    <form onsubmit="event.preventDefault(); alert('Request submitted successfully!');">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Select Loan Type</label>
+                                <select class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white">
+                                    <option>Home Loan</option>
+                                    <option>Balance Transfer</option>
+                                    <option>Loan Against Property</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-primary hover:bg-secondary text-white rounded-xl font-bold transition-colors shadow-lg shadow-primary/30 mt-2">
+                                Submit Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>`;
+
+const indexPath = 'index.html';
+const html = fs.readFileSync(indexPath, 'utf8');
+
+const navEndIndex = html.indexOf('</nav>') + 6;
+const footerStartIndex = html.indexOf('<!-- Footer -->');
+
+const newHtml = html.substring(0, navEndIndex) + '\\n\\n' + content + '\\n\\n    ' + html.substring(footerStartIndex);
+
+fs.writeFileSync(indexPath, newHtml);
+console.log('Successfully updated index.html');
