@@ -22,15 +22,7 @@
     <!-- Minimal Navbar -->
     <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-2">
-                    <i class="ph-fill ph-house-line text-primary text-3xl"></i>
-                    <a href="index.html" class="font-heading font-bold text-xl tracking-tight text-primary dark:text-white">
-                        PrimeNest<span class="text-secondary">.</span>
-                    </a>
-                </div>
-
+            <div class="flex justify-end items-center h-20">
                 <!-- Action Buttons & Toggles -->
                 <div class="flex items-center space-x-2 xl:space-x-4 text-sm xl:text-base">
                     <!-- Toggles -->
@@ -47,16 +39,22 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center relative z-10 p-4 py-10">
+    <main class="flex-grow flex items-center justify-center relative z-10 p-3 sm:p-4 pt-24 pb-8 md:pt-28 md:pb-12">
         <div class="w-full max-w-xl">
-            <div class="glass-effect rounded-3xl p-8 md:p-10 shadow-2xl fade-in">
+            <div class="glass-effect rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl fade-in">
                 <div class="text-center mb-8">
-                    <h1 class="text-3xl font-heading font-bold dark:text-white mb-2">Create an Account</h1>
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <i class="ph-fill ph-house-line text-primary text-4xl sm:text-5xl"></i>
+                        <a href="index.html" class="font-heading font-bold text-3xl sm:text-4xl tracking-tight text-primary dark:text-white">
+                            PrimeNest<span class="text-secondary">.</span>
+                        </a>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl font-heading font-bold dark:text-white mb-2">Create an Account</h1>
                     <p class="text-gray-600 dark:text-gray-300">Join our portal to track your loan status</p>
                 </div>
 
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form class="space-y-4 md:space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
                             <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white transition-colors" placeholder="John" required>
@@ -107,15 +105,37 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center">
-                        <input type="checkbox" id="terms" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
-                        <label for="terms" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">I accept the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></label>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms" class="mt-0.5 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
+                        <label for="terms" class="ml-2 block text-sm leading-5 text-gray-700 dark:text-gray-300">I accept the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></label>
                     </div>
 
                     <button type="submit" onclick="window.location.href='dashboard.html'; return false;" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3.5 px-4 rounded-lg transition-colors shadow-lg shadow-primary/30">
                         Create Account
                     </button>
                 </form>
+
+                <div class="mt-8 relative">
+                    
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-transparent text-gray-500 dark:text-gray-400">Or continue with</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <button class="w-full flex justify-center items-center gap-3 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5 w-5" alt="Google">
+                        Sign up with Google
+                    </button>
+                    <button class="w-full flex justify-center items-center gap-3 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+                        <i class="ph-fill ph-facebook-logo text-[#1877F2] text-xl"></i>
+                        Sign up with Facebook
+                    </button>
+                    <button class="w-full flex justify-center items-center gap-3 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+                        <i class="ph-fill ph-apple-logo text-xl"></i>
+                        Sign up with Apple
+                    </button>
+                </div>
 
                 <p class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                     Already have an account? <a href="login.html" class="font-medium text-primary dark:text-blue-400 hover:underline">Log in</a>
