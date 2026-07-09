@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
+
+    initPasswordToggle();
 });
 
 function initTheme() {
@@ -137,3 +139,26 @@ function initEmiCalculator() {
     calculateEMI();
 }
 
+function initPasswordToggle() {
+    const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+    
+    togglePasswordButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Find the input field within the same parent relative container
+            const input = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            
+            if (input && input.tagName === 'INPUT') {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('ph-eye');
+                    icon.classList.add('ph-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('ph-eye-slash');
+                    icon.classList.add('ph-eye');
+                }
+            }
+        });
+    });
+}
