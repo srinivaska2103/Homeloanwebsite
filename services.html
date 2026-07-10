@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind-config.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white transition-colors duration-300">
@@ -26,15 +26,15 @@
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 text-sm xl:text-base">
-                    <a href="index.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
-                    <a href="home2.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
-                    <a href="aboutus.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">About Us</a>
-                    <a href="services.html" class="text-primary dark:text-white font-medium hover:text-secondary transition-colors">Services</a>
-                    <a href="gallery.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Gallery</a>
-                    <a href="pricing.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
-                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
-                    <a href="dashboard.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
+                <div class="hidden lg:flex items-center space-x-3 xl:space-x-5 text-sm xl:text-base nav-links">
+                    <a href="index.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
+                    <a href="home2.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
+                    <a href="aboutus.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">About Us</a>
+                    <a href="services.html" class="nav-link text-primary dark:text-white font-medium hover:text-secondary transition-colors">Services</a>
+                    <a href="gallery.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Gallery</a>
+                    <a href="pricing.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
+                    <a href="contact.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
+                    <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
                 </div>
 
                 <!-- Action Buttons & Toggles -->
@@ -47,7 +47,7 @@
                     <button id="dir-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300 text-sm font-semibold" aria-label="Toggle Direction">
                         LTR
                     </button>
-                    <a href="login.html" class="border border-secondary text-secondary hover:bg-secondary hover:text-white dark:hover:text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors">Portal Login</a>
+                    <a href="login.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Portal Login</a>
                     <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors shadow-lg shadow-primary/30">Book Now</a>
                 </div>
 
@@ -62,15 +62,15 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
-                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
-                <a href="aboutus.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">About Us</a>
-                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800">Services</a>
-                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Gallery</a>
-                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
-                <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
+            <div class="px-4 pt-2 pb-6 space-y-1 mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
+                <a href="home2.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
+                <a href="aboutus.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">About Us</a>
+                <a href="services.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-800">Services</a>
+                <a href="gallery.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Gallery</a>
+                <a href="pricing.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
+                <a href="contact.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
+                <a href="dashboard.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
                 <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-col gap-3">
                     <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
                         <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Theme</span>
@@ -85,8 +85,8 @@
                             LTR
                         </button>
                     </div>
-                    <a href="login.html" class="w-full text-center px-4 py-2 border border-secondary text-secondary dark:text-secondary rounded-lg font-medium">Portal Login</a>
-                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium">Book Now</a>
+                    <a href="login.html" class="mobile-nav-link w-full text-center px-4 py-2 text-gray-600 dark:text-gray-300 border border-secondary rounded-lg font-medium hover:bg-secondary hover:text-white transition-colors">Portal Login</a>
+                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition-colors">Book Now</a>
                 </div>
             </div>
         </div>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-house text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Home Loan</h3>
@@ -161,7 +161,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-bank text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Mortgage Advisory</h3>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-buildings text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Loan Against Property</h3>
@@ -201,7 +201,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-hammer text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Construction Loan</h3>
@@ -221,7 +221,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-map-trifold text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Plot Purchase Loan</h3>
@@ -241,7 +241,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400 shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="ph-fill ph-paint-brush text-xl"></i>
                             </div>
                             <h3 class="text-lg font-bold dark:text-white">Home Renovation Loan</h3>
@@ -328,7 +328,7 @@
                     </ul>
                 </div>
                 <div class="order-1 lg:order-2 w-full max-w-lg mx-auto lg:max-w-none">
-                    <img src="assets/serviceimg" alt="Documentation Review" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]">
+                    <img src="assets/serviceimg1" alt="Documentation Review" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]">
                 </div>
             </div>
         </div>
@@ -632,6 +632,6 @@
         </button>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>

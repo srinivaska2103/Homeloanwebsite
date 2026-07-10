@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind-config.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white transition-colors duration-300">
@@ -26,15 +26,15 @@
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-3 xl:space-x-6 text-sm xl:text-base">
-                    <a href="index.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
-                    <a href="home2.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
-                    <a href="aboutus.html" class="text-primary dark:text-white font-medium hover:text-secondary transition-colors">About Us</a>
-                    <a href="services.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Services</a>
-                    <a href="gallery.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Gallery</a>
-                    <a href="pricing.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
-                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
-                    <a href="dashboard.html" class="text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
+                <div class="hidden lg:flex items-center space-x-3 xl:space-x-5 text-sm xl:text-base nav-links">
+                    <a href="index.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home</a>
+                    <a href="home2.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Home 2</a>
+                    <a href="aboutus.html" class="nav-link text-primary dark:text-white font-medium hover:text-secondary transition-colors">About Us</a>
+                    <a href="services.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Services</a>
+                    <a href="gallery.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Gallery</a>
+                    <a href="pricing.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Pricing</a>
+                    <a href="contact.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Contact</a>
+                    <a href="dashboard.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Dashboard</a>
                 </div>
 
                 <!-- Action Buttons & Toggles -->
@@ -47,7 +47,7 @@
                     <button id="dir-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300 text-sm font-semibold" aria-label="Toggle Direction">
                         LTR
                     </button>
-                    <a href="login.html" class="border border-secondary text-secondary hover:bg-secondary hover:text-white dark:hover:text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors">Portal Login</a>
+                    <a href="login.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Portal Login</a>
                     <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors shadow-lg shadow-primary/30">Book Now</a>
                 </div>
 
@@ -62,15 +62,15 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
-                <a href="home2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
-                <a href="aboutus.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800">About Us</a>
-                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Services</a>
-                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Gallery</a>
-                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
-                <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
+            <div class="px-4 pt-2 pb-6 space-y-1 mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a>
+                <a href="home2.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home 2</a>
+                <a href="aboutus.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-primary dark:text-white bg-gray-50 dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-800">About Us</a>
+                <a href="services.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Services</a>
+                <a href="gallery.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Gallery</a>
+                <a href="pricing.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Pricing</a>
+                <a href="contact.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a>
+                <a href="dashboard.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800">Dashboard</a>
                 <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-col gap-3">
                     <div class="flex items-center justify-between px-4 py-2 bg-gray-50 dark:bg-slate-800 rounded-lg">
                         <span class="text-gray-600 dark:text-gray-300 font-medium text-sm">Theme</span>
@@ -85,8 +85,8 @@
                             LTR
                         </button>
                     </div>
-                    <a href="login.html" class="w-full text-center px-4 py-2 border border-secondary text-secondary dark:text-secondary rounded-lg font-medium">Portal Login</a>
-                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium">Book Now</a>
+                    <a href="login.html" class="mobile-nav-link w-full text-center px-4 py-2 text-gray-600 dark:text-gray-300 border border-secondary rounded-lg font-medium hover:bg-secondary hover:text-white transition-colors">Portal Login</a>
+                    <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition-colors">Book Now</a>
                 </div>
             </div>
         </div>
@@ -115,41 +115,6 @@
             </div>
         </div>
     </section>
- <!-- 8. Achievements & Statistics -->
-    <section class="py-20 relative bg-primary dark:bg-slate-900 border-t border-gray-800 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 dark:opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 text-center fade-in">
-                
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">10k+</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Happy Clients</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">₹500Cr+</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Loans Facilitated</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">25+</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Banking Partners</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">98%</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Satisfaction Rate</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">15+</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Years Experience</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-3 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-2xl sm:text-4xl font-bold text-white mb-1 sm:mb-2">50+</div>
-                    <div class="text-xs sm:text-sm text-blue-200 font-medium">Expert Advisors</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- 2. Our Story -->
     <section class="py-20 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center fade-in">
@@ -541,9 +506,7 @@
                     Contact Our Advisors
                     <i class="ph ph-envelope-simple group-hover/btn2:-rotate-12 transition-transform"></i>
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" class="px-8 py-4 bg-green-500 text-white rounded-xl font-bold text-lg hover:bg-green-400 transition-all duration-300 shadow-lg shadow-green-500/20 hover:shadow-green-500/40 hover:-translate-y-1 flex items-center justify-center gap-2 group/btn3">
-                    <i class="ph-fill ph-whatsapp-logo group-hover/btn3:scale-110 transition-transform"></i> WhatsApp
-                </a>
+                
             </div>
             
             <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-400 border-t border-white/10 pt-8">
@@ -638,6 +601,6 @@
         </button>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind-config.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-bglight dark:bg-bgdark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white transition-colors duration-300 flex h-screen overflow-hidden">
@@ -55,40 +55,44 @@
             </div>
         </div>
 
-        <!-- Toggles & User -->
-        <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-4 shrink-0">
-            <div class="flex items-center justify-between px-2">
-                <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Preferences</span>
-                <div class="flex gap-2">
-                    <button id="dir-toggle-sidebar" class="p-1.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 text-xs font-semibold hover:text-primary transition-colors">LTR</button>
-                    <button id="theme-toggle-sidebar" class="p-1.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                        <i class="ph ph-moon dark:hidden"></i>
-                        <i class="ph ph-sun hidden dark:block"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="flex items-center gap-3 px-2 py-2">
-                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">JD</div>
-                <div class="overflow-hidden">
-                    <p class="text-sm font-bold dark:text-white leading-none truncate">John Doe</p>
-                    <a href="login.html" class="text-xs text-gray-500 hover:text-primary truncate">Logout</a>
-                </div>
-            </div>
+        <!-- Logout -->
+        <div class="p-4 border-t border-gray-200 dark:border-gray-800 shrink-0">
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full px-4 py-3 bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-500/20 rounded-xl font-bold transition-colors">
+                <i class="ph-bold ph-sign-out text-lg"></i> Logout
+            </a>
         </div>
     </aside>
 
     <!-- Main Content Area -->
     <div class="flex-1 flex flex-col h-full overflow-hidden relative">
         
-        <!-- Mobile Header (Visible only on lg and down) -->
-        <header class="lg:hidden h-16 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-4 shrink-0 z-30 relative shadow-sm">
-            <div class="flex items-center gap-2">
+        <!-- Top Navbar -->
+        <header class="h-16 lg:h-20 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-4 lg:px-8 shrink-0 z-30 shadow-sm relative">
+            <a href="index.html" class="flex items-center gap-2 lg:hidden">
                 <i class="ph-fill ph-house-line text-primary text-2xl"></i>
                 <span class="font-heading font-bold text-lg text-primary dark:text-white">PrimeNest.</span>
+            </a>
+            
+            <div class="hidden lg:block">
+                <!-- Empty spacer for desktop -->
             </div>
-            <button id="open-sidebar" class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
-                <i class="ph ph-list text-2xl"></i>
-            </button>
+
+            <div class="flex items-center gap-3 md:gap-4 ml-auto">
+                <button id="dir-toggle-navbar" class="p-2 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 text-xs md:text-sm font-semibold hover:text-primary transition-colors">LTR</button>
+                <button id="theme-toggle-navbar" class="p-2 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="ph ph-moon text-lg dark:hidden"></i>
+                    <i class="ph ph-sun text-lg hidden dark:block"></i>
+                </button>
+                <button class="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="ph ph-bell text-xl md:text-2xl"></i>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-slate-900"></span>
+                </button>
+                <div class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold cursor-pointer shrink-0">JD</div>
+                
+                <button id="open-sidebar" class="lg:hidden ml-1 text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
         </header>
 
         <!-- Main Scrollable Content -->
@@ -239,7 +243,7 @@
                                         <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold text-xs inline-block">Under Review</span>
                                     </td>
                                     <td class="px-6 py-4 text-right">
-                                        <button onclick="document.querySelector('[data-tab=\'dashboard\']').click()" class="text-primary hover:text-secondary font-medium">View Timeline</button>
+                                        <button onclick="document.querySelector('[data-tab=\'dashboard\']').click()" class="text-primary dark:text-blue-400 hover:text-secondary font-medium">View Timeline</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -251,7 +255,7 @@
                                         <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold text-xs inline-block">Approved</span>
                                     </td>
                                     <td class="px-6 py-4 text-right">
-                                        <button class="text-primary hover:text-secondary font-medium">Download Letter</button>
+                                        <button class="text-primary dark:text-blue-400 hover:text-secondary font-medium">Download Letter</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -298,31 +302,31 @@
                         <h3 class="text-lg font-bold dark:text-white mb-4">Uploaded Documents</h3>
                         <div class="space-y-4">
                             <!-- Doc Item -->
-                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl">
-                                <div class="flex items-center gap-4">
+                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl gap-2">
+                                <div class="flex items-center gap-4 min-w-0">
                                     <div class="w-10 h-10 bg-green-50 text-green-600 rounded-lg flex items-center justify-center shrink-0">
                                         <i class="ph-fill ph-file-pdf text-xl"></i>
                                     </div>
-                                    <div>
-                                        <h4 class="font-bold text-sm dark:text-white">Passport_Copy.pdf</h4>
+                                    <div class="min-w-0">
+                                        <h4 class="font-bold text-sm dark:text-white truncate">Passport_Copy.pdf</h4>
                                         <p class="text-xs text-green-600 flex items-center gap-1"><i class="ph-bold ph-check"></i> Verified</p>
                                     </div>
                                 </div>
-                                <button class="text-gray-400 hover:text-primary"><i class="ph-bold ph-eye text-xl"></i></button>
+                                <button class="text-gray-400 hover:text-primary shrink-0"><i class="ph-bold ph-eye text-xl"></i></button>
                             </div>
                             
                             <!-- Doc Item -->
-                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl">
-                                <div class="flex items-center gap-4">
+                            <div class="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-xl gap-2">
+                                <div class="flex items-center gap-4 min-w-0">
                                     <div class="w-10 h-10 bg-blue-50 text-primary rounded-lg flex items-center justify-center shrink-0">
                                         <i class="ph-fill ph-file-pdf text-xl"></i>
                                     </div>
-                                    <div>
-                                        <h4 class="font-bold text-sm dark:text-white">Bank_Statement_H1.pdf</h4>
+                                    <div class="min-w-0">
+                                        <h4 class="font-bold text-sm dark:text-white truncate">Bank_Statement_H1.pdf</h4>
                                         <p class="text-xs text-gray-500">Uploaded Oct 03</p>
                                     </div>
                                 </div>
-                                <button class="text-gray-400 hover:text-primary"><i class="ph-bold ph-eye text-xl"></i></button>
+                                <button class="text-gray-400 hover:text-primary shrink-0"><i class="ph-bold ph-eye text-xl"></i></button>
                             </div>
                             
                             <!-- Doc Item (Required) -->
@@ -472,16 +476,31 @@
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Password</label>
-                                <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                <div class="relative">
+                                    <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 pr-10 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                    <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary password-toggle">
+                                        <i class="ph ph-eye text-lg"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">New Password</label>
-                                    <input type="password" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                    <div class="relative">
+                                        <input type="password" class="w-full px-4 py-2.5 pr-10 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                        <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary password-toggle">
+                                            <i class="ph ph-eye text-lg"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Confirm New Password</label>
-                                    <input type="password" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                    <div class="relative">
+                                        <input type="password" class="w-full px-4 py-2.5 pr-10 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:text-white">
+                                        <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-primary password-toggle">
+                                            <i class="ph ph-eye text-lg"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <button class="px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-secondary transition-colors">Update Password</button>
@@ -593,9 +612,9 @@
                 });
             });
             
-            // Toggle Logic for Sidebar
-            const themeToggleBtn = document.getElementById("theme-toggle-sidebar");
-            const dirToggleBtn = document.getElementById("dir-toggle-sidebar");
+            // Toggle Logic for Navbar
+            const themeToggleBtn = document.getElementById("theme-toggle-navbar");
+            const dirToggleBtn = document.getElementById("dir-toggle-navbar");
             const html = document.documentElement;
 
             if (themeToggleBtn) {
@@ -620,8 +639,26 @@
                     }
                 });
             }
+
+            // Password Toggle Logic
+            const passwordToggles = document.querySelectorAll('.password-toggle');
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const input = toggle.previousElementSibling;
+                    const icon = toggle.querySelector('i');
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.remove('ph-eye');
+                        icon.classList.add('ph-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.remove('ph-eye-slash');
+                        icon.classList.add('ph-eye');
+                    }
+                });
+            });
         });
     </script>
-    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>
