@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +47,7 @@
                     <button id="dir-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-600 dark:text-gray-300 text-sm font-semibold" aria-label="Toggle Direction">
                         LTR
                     </button>
-                    <a href="login.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Portal Login</a>
+                    <a href="login.html" class="nav-link text-gray-600 dark:text-gray-300 font-medium hover:text-secondary transition-colors">Login</a>
                     <a href="booknow.html" class="bg-primary hover:bg-secondary text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg font-medium transition-colors shadow-lg shadow-primary/30">Book Now</a>
                 </div>
 
@@ -85,7 +85,7 @@
                             LTR
                         </button>
                     </div>
-                    <a href="login.html" class="mobile-nav-link w-full text-center px-4 py-2 text-gray-600 dark:text-gray-300 border border-secondary rounded-lg font-medium hover:bg-secondary hover:text-white transition-colors">Portal Login</a>
+                    <a href="login.html" class="mobile-nav-link w-full text-center px-4 py-2 text-gray-600 dark:text-gray-300 border border-secondary rounded-lg font-medium hover:bg-secondary hover:text-white transition-colors">Login</a>
                     <a href="booknow.html" class="w-full text-center px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition-colors">Book Now</a>
                 </div>
             </div>
@@ -475,7 +475,7 @@
                         Yes, a Balance Transfer allows you to move your loan to another lender offering lower interest rates, which can significantly reduce your EMI or tenure.
                     </div>
                 </details>
-                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors hidden faq-extra">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
                         <span>What is the minimum credit score?</span>
                         <span class="transition group-open:rotate-180">
@@ -486,7 +486,7 @@
                         Most banks prefer a CIBIL score of 750 or above for the best rates. However, loans are available for lower scores (650+) with slightly varied terms.
                     </div>
                 </details>
-                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors hidden faq-extra">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
                         <span>Do you help with documentation?</span>
                         <span class="transition group-open:rotate-180">
@@ -497,7 +497,7 @@
                         Absolutely. We provide end-to-end documentation support, ensuring your file is perfectly prepped for rapid bank approval.
                     </div>
                 </details>
-                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors hidden faq-extra">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
                         <span>Is online consultation available?</span>
                         <span class="transition group-open:rotate-180">
@@ -508,7 +508,7 @@
                         Yes, we offer fully remote consultations via phone or video call, and digital document collection for your convenience.
                     </div>
                 </details>
-                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors">
+                <details class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-gray-200 dark:border-gray-700 open:bg-white dark:open:bg-slate-800 transition-colors hidden faq-extra">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 dark:text-white">
                         <span>Are there any hidden charges?</span>
                         <span class="transition group-open:rotate-180">
@@ -519,6 +519,13 @@
                         We maintain 100% transparency. Any processing fees levied by the bank will be clearly communicated upfront.
                     </div>
                 </details>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="mt-8 text-center" id="faq-view-all-container">
+                <button onclick="document.querySelectorAll('.faq-extra').forEach(el => el.classList.remove('hidden')); document.getElementById('faq-view-all-container').style.display='none';" class="px-6 py-3 border border-gray-300 dark:border-gray-700 text-slate-700 dark:text-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 font-medium transition-colors inline-flex items-center gap-2">
+                    View All FAQs <i class="ph ph-caret-down"></i>
+                </button>
             </div>
         </div>
     </section>
